@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Promasdk</string>
+    <string name="action_settings">Settings</string>
+    <string name="banner_ad_unit_id">ca-app-pub-1306569564337830/7757151704</string>
+    <string name="banner_ad_interstitial_id">ca-app-pub-1306569564337830/9233884908</string>
+    <string name="banner_ad_rewarded_skin1">ca-app-pub-1306569564337830/3628898565</string>
+    <string-array name="pushnotification_messages">
+        <item>Configure strings xml push notification array!</item>
+    </string-array>
+</resources>
