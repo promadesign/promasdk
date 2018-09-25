@@ -1,37 +1,36 @@
 apply plugin: 'com.android.library'
 apply plugin: 'io.fabric'
 
-buildscript {
-    repositories {
-        jcenter()
-        maven {
-            url 'https://maven.google.com/'
-            name 'Google'
-        }
-        maven { url "https://jitpack.io" }
-        maven { url 'https://maven.fabric.io/public' }
-        google()
-    }
-    dependencies {
-        classpath 'com.android.tools.build:gradle:3.1.3'
-        classpath 'io.fabric.tools:gradle:1.+'
+// This is the library version used when deploying the artifact
+version = versions.promaSdkVersion
 
-        // NOTE: Do not place your application dependencies here; they belong
-        // in the individual module build.gradle files
-        classpath 'com.google.gms:google-services:4.0.0'
-    }
-}
+//buildscript {
+//    repositories {
+//        jcenter()
+//        maven {
+//            url 'https://maven.google.com/'
+//            name 'Google'
+//        }
+//        maven { url "https://jitpack.io" }
+//        maven { url 'https://maven.fabric.io/public' }
+//        google()
+//    }
+//    dependencies {
+//        classpath 'io.fabric.tools:gradle:1.+'
+//
+//        // NOTE: Do not place your application dependencies here; they belong
+//        // in the individual module build.gradle files
+//        classpath 'com.google.gms:google-services:4.0.0'
+//    }
+//}
 
 android {
     compileSdkVersion 27
-
-
-
     defaultConfig {
         minSdkVersion 14
         targetSdkVersion 27
         versionCode 1
-        versionName "1.0"
+        versionName versions.promaSdkVersion
 
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
 
@@ -46,29 +45,30 @@ android {
 
 }
 
-repositories {
-    jcenter()
-    maven {
-        url 'https://maven.google.com/'
-        name 'Google'
-    }
-    google()
+//repositories {
+//    jcenter()
 //    maven {
-//        url "https://jitpack.io"
+//        url 'https://maven.google.com/'
+//        name 'Google'
 //    }
-}
-allprojects {
-    repositories {
-        maven { url "https://jitpack.io" }
-        jcenter()
-        maven {
-            url 'https://maven.google.com/'
-            name 'Google'
-        }
-        google()
-
-    }
-}
+//    google()
+//    maven { url "https://jitpack.io" }
+////    maven {
+////        url "https://jitpack.io"
+////    }
+//}
+//allprojects {
+//    repositories {
+//        maven { url "https://jitpack.io" }
+//        jcenter()
+//        maven {
+//            url 'https://maven.google.com/'
+//            name 'Google'
+//        }
+//        google()
+//
+//    }
+//}
 
 
 dependencies {
@@ -92,3 +92,7 @@ dependencies {
         transitive = true;
     }
 }
+
+
+
+apply from: 'publish.gradle'
